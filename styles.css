@@ -1,0 +1,344 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --burgundy: #7A1A28;
+  --burgundy-dark: #5C1320;
+  --gold: #C9A84C;
+  --bg: #F8F5F0;
+  --white: #FFFFFF;
+  --text: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --border: #E5DDD5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.nav-brand .wordmark {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--burgundy);
+  letter-spacing: 0.02em;
+}
+
+.nav-brand .tagline {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--burgundy); }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 24px 64px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  color: var(--burgundy);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto 36px;
+}
+
+.badge-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--text);
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.3;
+  transition: background 0.2s;
+}
+
+.store-badge:hover { background: #333; }
+
+.store-badge svg { flex-shrink: 0; }
+
+.store-badge .badge-label { font-size: 10px; opacity: 0.8; display: block; }
+.store-badge .badge-store { font-size: 15px; font-weight: 600; display: block; }
+
+/* FEATURES */
+.features {
+  background: var(--white);
+  padding: 64px 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.features-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--burgundy);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* CTA SECTION */
+.cta-section {
+  text-align: center;
+  padding: 72px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--burgundy);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 13px;
+}
+
+footer a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.2s;
+}
+
+footer a:hover { color: var(--white); }
+
+footer .footer-links { margin-bottom: 12px; }
+
+/* LEGAL PAGES */
+.legal-page {
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 0 24px 80px;
+}
+
+.legal-page h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-bottom: 6px;
+}
+
+.legal-page .effective {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.legal-page p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.legal-page h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.legal-page h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.legal-page ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.legal-page ul li {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.legal-page a { color: var(--burgundy); }
+
+/* CONTACT PAGE */
+.contact-page {
+  max-width: 560px;
+  margin: 80px auto;
+  padding: 0 24px 80px;
+  text-align: center;
+}
+
+.contact-page h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-bottom: 16px;
+}
+
+.contact-page p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--burgundy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.contact-email:hover { color: var(--burgundy-dark); }
+
+.contact-note {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .hero { padding: 56px 20px 48px; }
+}
