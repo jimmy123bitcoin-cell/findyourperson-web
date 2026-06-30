@@ -3,39 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Person — Someone Worth Moving For</title>
-  <meta name="description" content="A dating app built for deep compatibility — shared values, passions, and goals. Search any radius, from your city to the entire US." />
+  <title>Find Your Person — Someone Worth Moving For</title>
+  <meta name="description" content="A dating app that lets you search the entire US by values, lifestyle, and interests — not just location. Find someone truly compatible, not just nearby. For adults 18 and older." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://findyourperson.app/" />
+  <meta property="og:title" content="Find Your Person — Someone Worth Moving For" />
+  <meta property="og:description" content="Search the entire US by values, lifestyle, and interests. Find someone truly compatible, not just nearby. For adults 18 and older." />
+  <meta property="og:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:site_name" content="Find Your Person" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Find Your Person — Someone Worth Moving For" />
+  <meta name="twitter:description" content="Search the entire US by values, lifestyle, and interests. For adults 18 and older." />
+  <meta name="twitter:image" content="https://findyourperson.app/img/og-preview.png" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <nav>
     <a class="nav-brand" href="index.html">
-      <span class="wordmark">My Person</span>
+      <span class="wordmark">Find Your Person</span>
       <span class="tagline">Someone Worth Moving For</span>
     </a>
     <ul class="nav-links">
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="safety.html">Safety</a></li>
+      <li><a href="terms.html">Terms</a></li>
       <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
-    <span class="hero-eyebrow">Coming Soon</span>
+    <span class="hero-eyebrow">Now on the App Store</span>
     <h1>Someone Worth Moving For</h1>
     <p>
-      Most dating apps show you who's nearby. My Person shows you who's worth it —
-      deep compatibility built on shared values, passions, and goals, not just proximity.
+      Most dating apps show you who's nearby. Find Your Person shows you who's worth it —
+      search the entire US by values, lifestyle, and what you actually want in a partner.
     </p>
     <div class="badge-row">
-      <span class="store-badge">
+      <a class="store-badge" href="https://apps.apple.com/app/find-your-person/id6770636823" target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <span>
-          <span class="badge-label">Coming Soon on the</span>
+          <span class="badge-label">Download on the</span>
           <span class="badge-store">App Store</span>
         </span>
-      </span>
-      <span class="store-badge">
+      </a>
+      <span class="store-badge store-badge-disabled">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.99.14l13.24-7.49-2.87-2.88-11.36 10.23zm-1.76-20.8C1.16 3.3 1 3.7 1 4.2v15.6c0 .5.16.9.43 1.19l.06.06 8.73-8.73v-.2L1.48 3.02l-.06.06zm18.68 8.83l-2.72-1.54-3.12 3.12 3.12 3.13 2.74-1.55c.78-.44.78-1.16 0-1.6l-.02.44zM4.17.24L17.41 7.73l-2.87 2.88L3.18.38C3.48.21 3.87.07 4.17.24z"/></svg>
         <span>
           <span class="badge-label">Coming Soon on</span>
@@ -43,51 +64,162 @@
         </span>
       </span>
     </div>
+    <div class="age-badge">For adults 18 and older</div>
   </section>
 
-  <section class="features">
-    <div class="features-inner">
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-inner">
+      <p class="section-label">About</p>
+      <h2 class="section-title">A search-first dating app</h2>
+      <p class="about-body">
+        Find Your Person is for people whose relationship goals, lifestyle, location flexibility,
+        or values are hard to capture with a swipe app. Instead of browsing photos of people
+        nearby, you describe what you're looking for — and search the entire country for someone
+        who actually fits. No algorithm deciding who you see. No swipe deck. Just search.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="explainer">
+    <div class="explainer-inner">
       <p class="section-label">How It Works</p>
-      <h2 class="section-title">Dating built around who you are, not where you are</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">&#127757;</div>
-          <h3>Search Any Radius</h3>
-          <p>Search your city, your state, or the entire US. Distance isn't a dealbreaker when you find the right person.</p>
+      <h2 class="section-title">Search like you actually think about compatibility</h2>
+      <div class="explainer-points">
+        <div class="explainer-point">
+          <div class="point-number">1</div>
+          <div class="point-content">
+            <strong>Search by values and lifestyle, not by swiping.</strong>
+            <p>Type any trait, interest, or belief into the search bar — "homesteading," "entrepreneur," "Christian," "travel nurse," "wants kids soon" — and see real people who chose those words. Layer on filters for age, height, politics, religion, pets, education, and more.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">&#10084;</div>
-          <h3>Deep Compatibility</h3>
-          <p>Filter by values, lifestyle, beliefs, goals, and passions — not just age and location. Find someone who actually fits.</p>
+        <div class="explainer-point">
+          <div class="point-number">2</div>
+          <div class="point-content">
+            <strong>Search the entire US, not just your area.</strong>
+            <p>The app searches nationwide by default. The right person might be in your city or in a completely different state. Distance isn't treated as an automatic dealbreaker.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">&#127912;</div>
-          <h3>AI-Generated Avatars</h3>
-          <p>No profile photos. An AI avatar is created from your selfie — keeping it personal without the anxiety of posting real pictures publicly.</p>
+        <div class="explainer-point">
+          <div class="point-number">3</div>
+          <div class="point-content">
+            <strong>The "Willing to Relocate" field.</strong>
+            <p>Every profile answers whether they'd consider moving for the right person. If either person is open to it, the match can work. It's what makes a nationwide search realistic, not just theoretical.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">&#128232;</div>
-          <h3>Private Messaging</h3>
-          <p>Real photos are shared privately between people who choose to connect — on your terms, not broadcast to everyone.</p>
+        <div class="explainer-point">
+          <div class="point-number">4</div>
+          <div class="point-content">
+            <strong>No public photos — an AI avatar instead.</strong>
+            <p>Users take a selfie and the app generates a stylized avatar. That's what appears in search. Real photos are shared privately in one-on-one conversations, when both people are ready. It removes the anxiety of posting your face on a public dating profile.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SCREENSHOTS -->
+  <section class="screenshots-section">
+    <div class="screenshots-inner">
+      <p class="section-label">The App</p>
+      <h2 class="section-title">See how it works</h2>
+      <div class="screenshots-row">
+        <div class="phone-frame">
+          <img class="phone-screen" src="img/screenshot-search.png" alt="Search screen — type any value or lifestyle to find compatible people across the US" />
+          <p class="screenshot-caption">Search by values</p>
+        </div>
+        <div class="phone-frame">
+          <img class="phone-screen" src="img/screenshot-profile.png" alt="Profile view showing detailed lifestyle and personality information" />
+          <p class="screenshot-caption">Detailed profiles</p>
+        </div>
+        <div class="phone-frame">
+          <img class="phone-screen" src="img/screenshot-avatars.png" alt="AI avatar selection — choose a style generated from your selfie" />
+          <p class="screenshot-caption">AI-generated avatars</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-section">
+    <div class="who-inner">
+      <p class="section-label">Who It's For</p>
+      <h2 class="section-title">Built for people who haven't found the right fit locally</h2>
+      <div class="who-grid">
+        <div class="who-item">Rural and homestead singles</div>
+        <div class="who-item">Work travelers — flight attendants, travel nurses, pilots, consultants</div>
+        <div class="who-item">People seeking traditional or alternative relationship structures</div>
+        <div class="who-item">Hobbyists with niche interests — true crime, board games, gaming, old movies</div>
+        <div class="who-item">Entrepreneurs and creators looking for an equally driven partner</div>
+        <div class="who-item">Digital nomads, van-lifers, off-grid, RV and boating communities</div>
+        <div class="who-item">Athletes, musicians, and artists</div>
+        <div class="who-item">Singles with a specific background — Catholics, Minimalists, Homeschoolers, Korean speakers, debt-free daters</div>
+        <div class="who-item">Anyone who has found local options too limited</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Is it free to download?</p>
+          <p class="faq-a">Yes. Find Your Person is free to download and free to search. Sending the first message to someone requires a Premium subscription ($4.99/month). Replying to messages is always free.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Where is the app available?</p>
+          <p class="faq-a">The app is available now on iOS — <a href="https://apps.apple.com/app/find-your-person/id6770636823" target="_blank" rel="noopener">download on the App Store</a>. Android is coming soon.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Who can use Find Your Person?</p>
+          <p class="faq-a">Find Your Person is for adults 18 and older only. You must confirm your age at sign-up. Users who do not meet the age requirement are not permitted to use the service.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Can I search outside my city?</p>
+          <p class="faq-a">Yes — that's the point. The app searches the entire United States by default, not just your local area. You can find compatible people across any city or state.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How do I report a user or get help?</p>
+          <p class="faq-a">You can report any user directly from their profile inside the app. For additional help, email us at <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>. We respond within 1–2 business days.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is the "Willing to Relocate" field?</p>
+          <p class="faq-a">Every profile includes a field indicating whether the person would consider relocating for the right relationship. If either person is willing to move, the match is viable — it's what makes nationwide compatibility realistic rather than theoretical.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-section">
-    <h2>Launching Soon</h2>
-    <p>My Person is coming to iOS and Android. Have a question or want to get in touch?</p>
-    <a href="contact.html" class="store-badge" style="background: var(--burgundy); display: inline-flex;">
-      Contact Us
+    <h2>Download Free on iOS</h2>
+    <p>Search is free. Sending the first message requires Premium ($4.99/month).</p>
+    <a href="https://apps.apple.com/app/find-your-person/id6770636823" class="store-badge cta-badge" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <span>
+        <span class="badge-label">Download on the</span>
+        <span class="badge-store">App Store</span>
+      </span>
     </a>
+    <p class="cta-age-notice">Find Your Person is for adults 18 and older. By downloading, you confirm you meet the age requirement.</p>
   </section>
 
   <footer>
     <div class="footer-links">
       <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="safety.html">Safety &amp; Community</a>
       <a href="contact.html">Contact &amp; Support</a>
     </div>
-    &copy; 2026 MyPerson LLC. All rights reserved.
+    <div class="footer-meta">
+      &copy; 2026 MyPerson LLC &mdash; Dallas, TX &nbsp;&middot;&nbsp;
+      <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>
+    </div>
+    <div class="footer-age">For adults 18 and older.</div>
   </footer>
 
 </body>

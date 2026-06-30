@@ -341,4 +341,211 @@ footer .footer-links { margin-bottom: 12px; }
 @media (max-width: 480px) {
   .nav-links { display: none; }
   .hero { padding: 56px 20px 48px; }
+  .screenshots-row { flex-direction: column; align-items: center; }
+  .phone-screen { width: 260px; }
+  .who-grid { grid-template-columns: 1fr; }
+}
+
+/* DISABLED STORE BADGE */
+.store-badge-disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.store-badge-disabled:hover { background: var(--text); }
+
+/* PROMINENT AGE BADGE (hero) */
+.age-badge {
+  display: inline-block;
+  margin-top: 22px;
+  background: var(--burgundy);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 20px;
+}
+
+/* CTA DOWNLOAD BUTTON */
+.cta-badge {
+  background: var(--burgundy);
+}
+.cta-badge:hover { background: var(--burgundy-dark); }
+
+/* CTA AGE NOTICE (prominent, below download button) */
+.cta-age-notice {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  padding: 64px 24px;
+  text-align: center;
+}
+.about-inner { max-width: 760px; margin: 0 auto; }
+.about-body {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* HOW IT WORKS — EXPLAINER */
+.explainer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 64px 24px;
+}
+.explainer-inner { max-width: 760px; margin: 0 auto; }
+.explainer-points {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 8px;
+}
+.explainer-point {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.point-number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--burgundy);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.point-content strong {
+  display: block;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.point-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* SCREENSHOTS */
+.screenshots-section {
+  padding: 64px 24px;
+  background: var(--bg);
+}
+.screenshots-inner { max-width: 900px; margin: 0 auto; }
+.screenshots-row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.phone-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.phone-screen {
+  width: 220px;
+  height: auto;
+  border-radius: 22px;
+  border: 2px solid var(--border);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  display: block;
+}
+.screenshot-caption {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* WHO IT'S FOR */
+.who-section {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 64px 24px;
+}
+.who-inner { max-width: 900px; margin: 0 auto; }
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+.who-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.who-item::before {
+  content: "→ ";
+  color: var(--burgundy);
+  font-weight: 700;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 64px 24px;
+  background: var(--bg);
+}
+.faq-inner { max-width: 760px; margin: 0 auto; }
+.faq-list { margin-top: 8px; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.faq-a {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.faq-a a { color: var(--burgundy); text-decoration: none; }
+.faq-a a:hover { text-decoration: underline; }
+
+/* FOOTER ADDITIONS */
+.footer-meta {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.footer-meta a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+.footer-meta a:hover { color: var(--white); }
+.footer-age {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
 }
