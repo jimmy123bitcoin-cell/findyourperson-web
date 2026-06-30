@@ -69,7 +69,7 @@ nav {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 24px 64px;
+  padding: 80px 24px 40px;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -96,7 +96,7 @@ nav {
 .hero p {
   font-size: 18px;
   color: var(--text-secondary);
-  max-width: 560px;
+  max-width: 620px;
   margin: 0 auto 36px;
 }
 
@@ -200,7 +200,7 @@ nav {
 /* CTA SECTION */
 .cta-section {
   text-align: center;
-  padding: 72px 24px;
+  padding: 64px 24px;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -386,7 +386,7 @@ footer .footer-links { margin-bottom: 12px; }
 
 /* ABOUT SECTION */
 .about-section {
-  padding: 64px 24px;
+  padding: 48px 24px 64px;
   text-align: center;
 }
 .about-inner { max-width: 760px; margin: 0 auto; }
@@ -502,7 +502,7 @@ footer .footer-links { margin-bottom: 12px; }
   line-height: 1.5;
 }
 .who-item::before {
-  content: "→ ";
+  content: "• ";
   color: var(--burgundy);
   font-weight: 700;
 }
