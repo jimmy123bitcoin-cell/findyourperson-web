@@ -5,22 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — Find Your Person</title>
   <meta name="description" content="Terms of Service for Find Your Person, operated by MyPerson LLC." />
-  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <nav>
+  <nav class="legal-header">
     <a class="nav-brand" href="index.html">
-      <span class="wordmark">Find Your Person</span>
-      <span class="tagline">Someone Worth Moving For</span>
+      <img class="nav-icon" src="icon-192.png" alt="" width="30" height="30" />
+      <span class="nav-brand-text">
+        <span class="wordmark">Find Your Person</span>
+        <span class="tagline">Someone Worth Moving For</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="safety.html">Safety</a></li>
-      <li><a href="terms.html">Terms</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
   </nav>
 
   <div class="legal-page">
@@ -301,18 +307,25 @@
   </div>
 
   <footer>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="safety.html">Safety &amp; Community</a>
-      <a href="contact.html">Contact &amp; Support</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="wordmark">Find Your Person</span>
+        <p>A search-first dating app for people who know what they're looking for — nationwide, not just nearby.</p>
+      </div>
+      <div class="footer-links-col">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="safety.html">Safety &amp; Community</a>
+        <a href="contact.html">Contact &amp; Support</a>
+      </div>
+      <div class="footer-contact-col">
+        <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>
+        <span>&copy; <span id="year"></span> Find Your Person. Operated by MyPerson LLC, a Texas company.</span>
+        <span>For adults 18 and older.</span>
+      </div>
     </div>
-    <div class="footer-meta">
-      &copy; 2026 Find Your Person, a product of MyPerson LLC &mdash; Texas &nbsp;&middot;&nbsp;
-      <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>
-    </div>
-    <div class="footer-age">For adults 18 and older.</div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
