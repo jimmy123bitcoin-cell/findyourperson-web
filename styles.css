@@ -187,7 +187,8 @@ nav {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
+  padding-top: 24px;
 }
 
 .hero-copy { text-align: left; }
@@ -249,40 +250,6 @@ nav {
 
 .store-badge .badge-label { font-size: 10px; opacity: 0.85; display: block; letter-spacing: 0.02em; }
 .store-badge .badge-store { font-size: 16px; font-weight: 600; display: block; letter-spacing: -0.01em; }
-
-/* TRUST STRIP */
-.trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 14px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 11px 22px;
-  margin: 26px 0 0;
-  width: fit-content;
-  max-width: 100%;
-  box-shadow: var(--shadow-card);
-}
-
-.trust-strip span {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--burgundy-dark);
-  white-space: nowrap;
-}
-
-.trust-strip .dot {
-  color: var(--gold);
-  font-weight: 700;
-}
-
-.hero-age-note {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  margin-top: 14px;
-}
 
 /* HERO VISUAL */
 .hero-visual {
@@ -785,7 +752,6 @@ footer a:hover { color: var(--white); }
   .hero-copy { text-align: center; }
   .hero-copy p { margin-left: auto; margin-right: auto; }
   .badge-row { justify-content: center; }
-  .trust-strip { margin-left: auto; margin-right: auto; }
   .hero-visual { margin-top: 44px; min-height: auto; }
   .about-inner { text-align: center; }
   .about-inner .section-label,
