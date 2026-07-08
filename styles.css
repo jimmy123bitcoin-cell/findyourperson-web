@@ -496,13 +496,6 @@ nav {
   flex-shrink: 0;
   color: var(--burgundy);
 }
-.who-item--priority {
-  background: var(--white);
-  border-left: 3px solid var(--burgundy);
-  font-weight: 600;
-  box-shadow: var(--shadow-card);
-}
-
 /* FAQ */
 .faq-section {
   padding: var(--section-pad) 24px;
