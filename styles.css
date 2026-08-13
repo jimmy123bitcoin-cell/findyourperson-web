@@ -2,9 +2,14 @@
 
 :root {
   /* Color tokens */
-  --burgundy: #7A1A28;
-  --burgundy-dark: #5C1320;
-  --burgundy-deep: #3A0D16;
+  /* Canonical FYP burgundy, from the final logo package (export/README.md
+     "Exact values"). The site, the logo masters, the favicons and the app
+     icons are all this one value — do not reintroduce a website-only shade.
+     The two darks keep their own lightness and saturation and are rotated to
+     the same hue, so the family stays coherent in gradients and hovers. */
+  --burgundy: #6D2038;
+  --burgundy-dark: #5C132A;
+  --burgundy-deep: #3A0D1B;
   --gold: #C9A84C;         /* decorative accent only — fails AA on cream at small sizes */
   --gold-text: #7A5E1C;    /* AA-safe (5.7:1 on cream) — use for any small/bold gold text */
   --cream: #FBF7F1;
@@ -18,8 +23,8 @@
   --paper: var(--white);
 
   /* Shadow tokens */
-  --shadow-card: 0 10px 30px rgba(90, 30, 40, 0.07);
-  --shadow-lift: 0 24px 48px rgba(58, 13, 22, 0.18);
+  --shadow-card: 0 10px 30px rgba(90, 30, 49, 0.07);
+  --shadow-lift: 0 24px 48px rgba(58, 13, 27, 0.18);
 
   /* Radius tokens */
   --radius-button: 12px;
@@ -92,7 +97,7 @@ summary:focus-visible,
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s, color 0.2s;
 }
-.btn-primary { background: var(--burgundy); color: var(--cream); box-shadow: 0 8px 20px rgba(122,26,40,0.28); }
+.btn-primary { background: var(--burgundy); color: var(--cream); box-shadow: 0 8px 20px rgba(109,32,56,0.28); }
 .btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
 .btn-secondary { background: transparent; color: var(--burgundy); border-color: var(--burgundy); }
 .btn-secondary:hover { background: var(--burgundy); color: var(--cream); }
@@ -123,10 +128,14 @@ nav {
   text-decoration: none;
 }
 
+/* FP seal. Height-driven so the SVG's own 840:1056 aspect governs the width
+   exactly. 34px reads as the same weight as the 30px heart tile it replaced —
+   the seal is an outline oval that is mostly white space, so matching the
+   tile's height would have read noticeably lighter. No border-radius: this is
+   a transparent mark, not a rounded app-icon tile. */
 .nav-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+  width: auto;
+  height: 34px;
   display: block;
 }
 
@@ -264,7 +273,7 @@ nav {
   position: absolute;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(201,168,76,0.28) 0%, rgba(122,26,40,0.14) 55%, rgba(122,26,40,0) 75%);
+  background: radial-gradient(circle, rgba(201,168,76,0.28) 0%, rgba(109,32,56,0.14) 55%, rgba(109,32,56,0) 75%);
   filter: blur(6px);
   border-radius: 50%;
   z-index: 0;
