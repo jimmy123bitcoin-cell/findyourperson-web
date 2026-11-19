@@ -546,6 +546,7 @@ nav {
   font-weight: 700;
   color: var(--white);
   margin-bottom: 14px;
+  text-wrap: balance;
 }
 
 .cta-panel p {
