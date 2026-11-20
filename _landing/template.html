@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{metaTitle}}</title>
+  <meta name="description" content="{{metaDescription}}" />
+  <link rel="canonical" href="{{url}}" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <!-- Smart App Banner (iOS Safari) -->
+  <meta name="apple-itunes-app" content="app-id=6770636823" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{url}}" />
+  <meta property="og:title" content="{{metaTitle}}" />
+  <meta property="og:description" content="{{metaDescription}}" />
+  <meta property="og:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Find Your Person" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{metaTitle}}" />
+  <meta name="twitter:description" content="{{metaDescription}}" />
+  <meta name="twitter:image" content="https://findyourperson.app/img/og-preview.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  {{nav}}
+
+  <!-- HERO -->
+  <section class="hero hero--landing">
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Available on the App Store and Google Play</span>
+          <h1>{{headline}}</h1>
+          <p>{{subhead}}</p>
+          <div class="badge-row" id="get-the-app">
+            {{badges}}
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-glow"></div>
+          <div class="phone-frame">
+            <img class="phone-main-single" src="img/screenshot-search.png" alt="Search screen — search the entire US by values and lifestyle" width="320" height="569" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS (How It Works styling) -->
+  <section class="explainer">
+    <div class="explainer-inner">
+      <div class="steps-list">
+{{benefits}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-panel">
+      <h2>Someone Worth Moving For</h2>
+      <p>Free to download. Free to search.</p>
+      <p>Early Access: Create your profile and explore the founding community now. Messaging will open as soon as the community is ready.</p>
+      <div class="badge-row">
+        {{badges}}
+      </div>
+      <p class="cta-age-notice">Find Your Person is for adults 18 and older. By downloading, you confirm you meet the age requirement.</p>
+    </div>
+  </section>
+
+  {{footer}}
+
+  <script src="script.js"></script>
+</body>
+</html>

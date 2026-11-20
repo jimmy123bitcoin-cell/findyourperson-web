@@ -221,6 +221,12 @@ nav {
   letter-spacing: -0.02em;
 }
 
+/* Audience landing pages only (the homepage hero has no --landing class):
+   even line lengths so long headlines don't strand a word on the last line. */
+.hero--landing h1 {
+  text-wrap: balance;
+}
+
 .hero-copy p {
   font-size: 18px;
   color: var(--text-secondary);
