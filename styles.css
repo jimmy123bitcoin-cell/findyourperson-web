@@ -340,6 +340,10 @@ nav {
   color: var(--text-secondary);
   line-height: 1.75;
 }
+/* Landing pages have two About paragraphs; the homepage has one, so this never applies there. */
+.about-body + .about-body {
+  margin-top: 16px;
+}
 .about-quote {
   font-family: var(--font-display);
   font-style: italic;

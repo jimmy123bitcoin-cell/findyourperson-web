@@ -36,6 +36,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I keep searching when I change assignments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Find Your Person searches nationwide by default, so your search isn't limited to the city where you're currently working."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Find Your Person only for travel nurses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Find Your Person is open to eligible adults throughout the U.S. Travel nurses can search for people who share their values and relationship goals, including people who don't work in healthcare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free to download?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Find Your Person is free to download, create a profile, and search. We're currently in Early Access, so messaging isn't available yet. When messaging opens, starting a conversation will require Premium ($4.99/month), while replying will be free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the app available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Find Your Person is available now on both iOS and Android — download it on the App Store or get it on Google Play."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who can use Find Your Person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Find Your Person is for adults 18 and older only. You must confirm your age at sign-up. Users who do not meet the age requirement are not permitted to use the service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I search outside my city?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — that's the point. The app searches the entire United States by default, not just your local area. You can find compatible people across any city or state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do avatars work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instead of public photos, Find Your Person creates a stylized AI avatar from a selfie you upload. Your avatar — not your real photo — is what appears on your public profile. Your selfie is never shown to other users. Once messaging opens, you decide what to share in private one-on-one conversations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report a user or get help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can report any user directly from their profile inside the app. For additional help, email us at support@findyourperson.app. We aim to respond within 1–2 business days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete my account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can delete your account from inside the app. For help, email support@findyourperson.app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my location shared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your exact address is never shared. Other users only see a general area based on your zip code, and you can hide it down to state-level in Settings → Privacy. See our Privacy Policy for full details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I cancel Premium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On iOS, Premium subscriptions are managed through your Apple account and can be canceled in iOS subscription settings. On Android, they're managed through your Google account and can be canceled in Google Play subscription settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the \"Willing to Relocate\" field?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every profile includes a field indicating whether the person would consider relocating for the right relationship. If either person is willing to move, the match is viable — it's what makes nationwide compatibility realistic rather than theoretical."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -48,9 +153,9 @@
       </span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#how-it-works">How It Works</a></li>
-      <li><a href="index.html#who-its-for">Who It's For</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#who-its-for">Who It's For</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="safety.html">Safety</a></li>
     </ul>
     <a class="btn btn-primary btn-sm" href="#get-the-app">Download</a>
@@ -91,16 +196,40 @@
     </div>
   </section>
 
-  <!-- BENEFITS (How It Works styling) -->
-  <section class="explainer">
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-inner">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Your next assignment shouldn't define your dating options</h2>
+      <p class="about-body">Travel nursing can mean changing cities regularly, meeting new people, and starting over just when you're getting settled. Building a lasting relationship can be difficult when dating apps focus on whoever happens to be nearby.</p>
+      <p class="about-body">Find Your Person lets you search nationwide for someone who shares your values and relationship goals, regardless of where your current assignment takes you. You can also see who's willing to relocate.</p>
+      <p class="about-quote">No endless swiping. No algorithm deciding who you see. Just search for what matters to you.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (from the homepage; only point 2's body is audience-specific) -->
+  <section class="explainer" id="how-it-works">
     <div class="explainer-inner">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Search like you actually think about compatibility</h2>
       <div class="steps-list">
 
         <div class="step-row">
           <div class="step-text">
             <span class="step-number">1</span>
-            <strong>Search anywhere, not just nearby</strong>
-            <p>Your search covers the whole country by default, wherever your next assignment takes you.</p>
+            <strong>Search by what matters, not by swiping.</strong>
+            <p>Type what matters to you — lifestyle, goals, interests, or relationship preferences — then layer on filters for the basics. Search real profile words instead of waiting for an algorithm to decide who you see.</p>
+          </div>
+          <div class="step-visual">
+            <img class="phone-screen" src="img/screenshot-profile.png" alt="Profile screen showing an avatar, relocation and lifestyle tags, and written answers about who they are and who they hope to meet" width="260" height="462" />
+          </div>
+        </div>
+
+        <div class="step-row step-row--reverse">
+          <div class="step-text">
+            <span class="step-number">2</span>
+            <strong>Search the entire US, not just your area.</strong>
+            <p>Search nationwide regardless of where you're currently working. Your dating options don't have to reset whenever your next assignment takes you somewhere new.</p>
           </div>
           <div class="step-visual step-visual--icon">
             <span class="step-icon-lg" aria-hidden="true">
@@ -109,11 +238,11 @@
           </div>
         </div>
 
-        <div class="step-row step-row--reverse">
+        <div class="step-row">
           <div class="step-text">
-            <span class="step-number">2</span>
-            <strong>See who's willing to move</strong>
-            <p>Every profile shows whether that person would consider relocating for the right relationship.</p>
+            <span class="step-number">3</span>
+            <strong>The "Willing to Relocate" field.</strong>
+            <p>Every profile shows whether they'd consider moving for the right person. If either person is open to it, the match works — making nationwide search realistic, not theoretical.</p>
           </div>
           <div class="step-visual step-visual--icon">
             <span class="step-icon-lg" aria-hidden="true">
@@ -122,9 +251,9 @@
           </div>
         </div>
 
-        <div class="step-row">
+        <div class="step-row step-row--reverse">
           <div class="step-text">
-            <span class="step-number">3</span>
+            <span class="step-number">4</span>
             <strong>Your real photos aren't public.</strong>
             <p>Your public profile shows a stylized avatar — not the selfie you upload to create it. Your selfie is never shown to other users.</p>
           </div>
@@ -133,6 +262,98 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-section" id="who-its-for">
+    <div class="who-inner">
+      <p class="section-label">Who It's For</p>
+      <h2 class="section-title">For people whose careers keep them moving — and the people open to dating them</h2>
+      <div class="who-grid">
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Travel nurses moving between temporary assignments
+        </div>
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Nurses considering travel assignments in the future
+        </div>
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          People seeking a long-term relationship despite frequent moves
+        </div>
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Singles open to dating someone whose career involves travel
+        </div>
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          People comfortable exploring long-distance relationships
+        </div>
+        <div class="who-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Anyone who cares more about compatibility than sharing the same ZIP code
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (audience questions first, then the homepage's ten) -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I keep searching when I change assignments?<span class="chevron"></span></summary>
+          <div class="faq-a">Yes. Find Your Person searches nationwide by default, so your search isn't limited to the city where you're currently working.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is Find Your Person only for travel nurses?<span class="chevron"></span></summary>
+          <div class="faq-a">No. Find Your Person is open to eligible adults throughout the U.S. Travel nurses can search for people who share their values and relationship goals, including people who don't work in healthcare.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is it free to download?<span class="chevron"></span></summary>
+          <div class="faq-a">Yes. Find Your Person is free to download, create a profile, and search. We're currently in Early Access, so messaging isn't available yet. When messaging opens, starting a conversation will require Premium ($4.99/month), while replying will be free.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Where is the app available?<span class="chevron"></span></summary>
+          <div class="faq-a">Find Your Person is available now on both iOS and Android — <a href="https://apps.apple.com/app/find-your-person/id6770636823" target="_blank" rel="noopener">download it on the App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.myperson" target="_blank" rel="noopener">get it on Google Play</a>.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Who can use Find Your Person?<span class="chevron"></span></summary>
+          <div class="faq-a">Find Your Person is for adults 18 and older only. You must confirm your age at sign-up. Users who do not meet the age requirement are not permitted to use the service.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I search outside my city?<span class="chevron"></span></summary>
+          <div class="faq-a">Yes — that's the point. The app searches the entire United States by default, not just your local area. You can find compatible people across any city or state.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do avatars work?<span class="chevron"></span></summary>
+          <div class="faq-a">Instead of public photos, Find Your Person creates a stylized AI avatar from a selfie you upload. Your avatar — not your real photo — is what appears on your public profile. Your selfie is never shown to other users. Once messaging opens, you decide what to share in private one-on-one conversations.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I report a user or get help?<span class="chevron"></span></summary>
+          <div class="faq-a">You can report any user directly from their profile inside the app. For additional help, email us at <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>. We aim to respond within 1–2 business days.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I delete my account?<span class="chevron"></span></summary>
+          <div class="faq-a">You can delete your account from inside the app. For help, email <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is my location shared?<span class="chevron"></span></summary>
+          <div class="faq-a">Your exact address is never shared. Other users only see a general area based on your zip code, and you can hide it down to state-level in Settings → Privacy. See our <a href="privacy.html">Privacy Policy</a> for full details.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I cancel Premium?<span class="chevron"></span></summary>
+          <div class="faq-a">On iOS, Premium subscriptions are managed through your Apple account and can be canceled in iOS subscription settings. On Android, they're managed through your Google account and can be canceled in Google Play subscription settings.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the "Willing to Relocate" field?<span class="chevron"></span></summary>
+          <div class="faq-a">Every profile includes a field indicating whether the person would consider relocating for the right relationship. If either person is willing to move, the match is viable — it's what makes nationwide compatibility realistic rather than theoretical.</div>
+        </details>
       </div>
     </div>
   </section>
