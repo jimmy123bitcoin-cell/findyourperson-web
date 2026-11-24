@@ -29,7 +29,7 @@ export const SITE = {
 
   // Non-landing public pages for sitemap.xml (privacy-policy.html is a
   // redirect to privacy.html, so it is deliberately left out).
-  sitemapPages: ['/', '/privacy.html', '/terms.html', '/safety.html', '/contact.html', '/child-safety.html'],
+  sitemapPages: ['/', '/founding', '/privacy.html', '/terms.html', '/safety.html', '/contact.html', '/child-safety.html'],
 };
 
 const CLOSING_LINE = 'No endless swiping. No algorithm deciding who you see. Just search for what matters to you.';

@@ -717,6 +717,129 @@ footer a:hover { color: var(--white); }
 
 .legal-page a { color: var(--burgundy); }
 
+/* FOUNDING PAGE (/founding) — the general Founding Member offer + public code */
+.founding-page {
+  max-width: var(--prose-max);
+  margin: 72px auto 24px;
+  padding: 0 24px;
+}
+.founding-page h1 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--burgundy);
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.founding-page h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 40px 0 16px;
+}
+.founding-lede {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+.founding-lede strong { color: var(--ink); }
+.founding-code-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px 24px;
+  text-align: center;
+}
+.founding-code-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  margin-bottom: 12px;
+}
+.founding-code-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.founding-code {
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--burgundy);
+  background: var(--cream);
+  border: 2px dashed var(--gold);
+  border-radius: var(--radius-button);
+  padding: 8px 20px;
+  user-select: all;
+}
+.founding-code-status {
+  min-height: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--burgundy);
+}
+.founding-referral-note {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.founding-steps {
+  padding-left: 22px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.founding-steps li { margin-bottom: 10px; }
+.founding-steps strong { color: var(--ink); }
+.founding-fine {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+.founding-benefits {
+  list-style: none;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 8px 24px;
+}
+.founding-benefits li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.founding-benefits li:last-child { border-bottom: 0; }
+.founding-benefits strong { display: block; color: var(--ink); margin-bottom: 4px; }
+.founding-benefits span { color: var(--text-secondary); line-height: 1.6; }
+.founding-page a { color: var(--burgundy); }
+.founding-note {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: var(--cream);
+  border-radius: var(--radius-card);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.founding-note p + p { margin-top: 12px; }
+.founding-note strong { color: var(--ink); }
+@media (max-width: 480px) {
+  .founding-page { margin-top: 48px; padding: 0 16px; }
+  .founding-page h1 { font-size: 32px; }
+  .founding-lede { font-size: 16px; }
+  .founding-code { font-size: 24px; padding: 8px 14px; }
+}
+
 /* CONTACT PAGE */
 .contact-page {
   max-width: 560px;

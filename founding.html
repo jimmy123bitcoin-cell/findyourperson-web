@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Founding Member — Find Your Person</title>
+  <meta name="description" content="Join our first 100 Founding Members: complete your profile and use promo code FOUNDING for free Premium through one year after messaging opens, plus exclusive benefits." />
+  <link rel="canonical" href="https://findyourperson.app/founding" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <meta name="apple-itunes-app" content="app-id=6770636823" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://findyourperson.app/founding" />
+  <meta property="og:title" content="Become a Founding Member — Find Your Person" />
+  <meta property="og:description" content="Our first 100 Founding Members get exclusive benefits. Search the entire US by values, lifestyle, and interests. For adults 18 and older." />
+  <meta property="og:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Find Your Person" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Become a Founding Member — Find Your Person" />
+  <meta name="twitter:description" content="Our first 100 Founding Members get exclusive benefits. For adults 18 and older." />
+  <meta name="twitter:image" content="https://findyourperson.app/img/og-preview.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img class="nav-icon" src="fp-seal.svg" alt="" width="27" height="34" />
+      <span class="nav-brand-text">
+        <span class="wordmark">Find Your Person</span>
+        <span class="tagline">Someone Worth Moving For</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="safety.html">Safety</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#get-the-app">Download</a>
+  </nav>
+
+  <main class="founding-page">
+    <p class="section-label">Founding 100</p>
+    <h1 id="founding-title">Become a Founding Member</h1>
+
+    <!-- OPEN state (default; also shown if availability can't be checked) -->
+    <div id="founding-open">
+      <p class="founding-lede">
+        Become one of our first 100 Founding Members. Complete your profile and use an eligible promo code
+        to receive <strong>free Premium through one year after messaging opens</strong>, along with
+        exclusive Founding Member benefits.
+      </p>
+
+      <div class="founding-code-card">
+        <span class="founding-code-label">Your promo code</span>
+        <div class="founding-code-row">
+          <code class="founding-code" id="founding-code">FOUNDING</code>
+          <button type="button" class="btn btn-primary btn-sm" id="copy-code" data-code="FOUNDING">Copy code</button>
+        </div>
+        <p class="founding-code-status" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="founding-referral-note">
+          Already have a referral code from a friend? Use their code instead to receive the same
+          Founding Member benefits and give them credit for referring you.
+        </p>
+      </div>
+
+      <h2>How to claim it</h2>
+      <ol class="founding-steps">
+        <li><strong>Download Find Your Person</strong> and create your account.</li>
+        <li><strong>Complete your profile.</strong> Your avatar, Willing to Relocate, both short essays, and your ZIP code are required.</li>
+        <li><strong>Redeem your code.</strong> When your profile is complete, tap <em>Enter a promo code</em>, or anytime later go to Profile → Settings (the gear icon) → Redeem a Promo Code.</li>
+      </ol>
+      <p class="founding-fine">
+        Available to our first 100 qualifying members<span id="while-spots"> while spots remain</span>.
+        One promo or referral code per account.
+      </p>
+    </div>
+
+    <!-- CLOSED state (shown only when the app's own counter says all 100 are taken) -->
+    <div id="founding-closed" hidden>
+      <p class="founding-lede">
+        All 100 Founding Member spots have been claimed. Thank you to our founding community!
+        You can still join Find Your Person for free: create your profile and search nationwide.
+      </p>
+    </div>
+
+    <h2 id="benefits-heading">Founding Member benefits</h2>
+    <ul class="founding-benefits">
+      <li>
+        <strong>Free Premium through one year after messaging opens</strong>
+        <span>Your Premium starts the day you become a Founding Member and continues until one year after messaging opens.</span>
+      </li>
+      <li>
+        <strong>Your Founding Member number</strong>
+        <span>A numbered badge on your profile. Show or hide it anytime.</span>
+      </li>
+      <li>
+        <strong>Priority event registration</strong>
+        <span>Priority registration for our virtual events.</span>
+      </li>
+      <li>
+        <strong>Concierge Email Access</strong>
+        <span>Message <a href="mailto:concierge@findyourperson.app">concierge@findyourperson.app</a> for personal advice on your profile and searches.</span>
+      </li>
+    </ul>
+
+    <div class="founding-note">
+      <p id="no-code-note"><strong>You don't need a code to join.</strong> Anyone can download Find Your Person, create a profile, and search for free. A code is only needed for Founding Membership.</p>
+      <p><strong>We're in Early Access.</strong> Right now you can create your profile, search nationwide, and save profiles. Messaging isn't available yet. A code doesn't open messaging early.</p>
+    </div>
+  </main>
+
+  <section class="cta-section" id="get-the-app">
+    <div class="cta-panel">
+      <h2>Someone Worth Moving For</h2>
+      <p>Create your profile and search nationwide for free. We're currently in Early Access, with messaging coming later.</p>
+      <div class="badge-row">
+        <a href="https://apps.apple.com/app/find-your-person/id6770636823" class="store-badge" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span>
+            <span class="badge-label">Download on the</span>
+            <span class="badge-store">App Store</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.myperson&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dfounding_page%26utm_campaign%3Dfounding" class="store-badge" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M3.61 2.51c-.31.32-.5.82-.5 1.46v16.06c0 .64.19 1.14.5 1.46l.11.1L13 12.32v-.24L3.72 2.41l-.11.1z"/><path d="M16.13 15.47l-3.13-3.15v-.24l3.13-3.15.07.04 3.71 2.11c1.06.6 1.06 1.59 0 2.19l-3.71 2.11-.07.09z" opacity=".85"/><path d="M16.2 15.38L13 12.2 3.61 21.62c.35.37.93.42 1.58.05l11.01-6.29" opacity=".7"/><path d="M16.2 9.02L5.19 2.73c-.65-.37-1.23-.32-1.58.05L13 12.2l3.2-3.18z" opacity=".7"/></svg>
+          <span>
+            <span class="badge-label">GET IT ON</span>
+            <span class="badge-store">Google Play</span>
+          </span>
+        </a>
+      </div>
+      <p class="cta-age-notice">Find Your Person is for adults 18 and older. By downloading, you confirm you meet the age requirement.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="wordmark">Find Your Person</span>
+        <p>A search-first dating app for people who know what they're looking for — nationwide, not just nearby.</p>
+      </div>
+      <div class="footer-links-col">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="safety.html">Safety &amp; Community</a>
+        <a href="contact.html">Contact &amp; Support</a>
+      </div>
+      <div class="footer-contact-col">
+        <a href="mailto:support@findyourperson.app">support@findyourperson.app</a>
+        <span>&copy; <span id="year"></span> Find Your Person. Operated by MyPerson LLC, a Texas company.</span>
+        <span>For adults 18 and older.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="founding.js"></script>
+</body>
+</html>
