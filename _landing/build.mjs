@@ -186,7 +186,7 @@ function lifestylePicture(img, cls, sizes) {
   const set = (ext) => ws.map((w) => `${img.base}-${w}.${ext} ${w}w`).join(', ');
   return `<picture>
               <source type="image/webp" srcset="${set('webp')}" sizes="${sizes}" />
-              <img class="${cls}" src="${img.base}-${ws[ws.length - 1]}.jpg" srcset="${set('jpg')}" sizes="${sizes}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}" fetchpriority="high" />
+              <img class="${cls}" src="${img.base}-${ws[ws.length - 1]}.jpg" srcset="${set('jpg')}" sizes="${sizes}" alt="${esc(img.alt)}" width="${img.width}" height="${img.height}"${img.focus ? ` style="object-position: ${esc(img.focus)}"` : ''} fetchpriority="high" />
             </picture>`;
 }
 function screenshotPicture(shot, cls, w, h, lazy) {
@@ -236,7 +236,7 @@ function render(p) {
             ${lifestylePicture(p.lifestyleImage, 'lifestyle-img', '(max-width: 860px) 100vw, 560px')}
           </div>
           <div class="phone-frame phone-frame--overlap">
-            ${screenshotPicture(p.screenshots.hero || p.screenshots.search, 'phone-main-single', 320, 569, false)}
+            ${screenshotPicture(p.screenshots.hero, 'phone-main-single', 320, 569, false)}
           </div>
         </div>`
     : `        <div class="hero-visual">
@@ -318,18 +318,48 @@ ${ex.items.map((it) => `        <div class="example-card">
   return { html, apple: appStoreUrl(campaign), play: playUrl(campaign) };
 }
 
+// /homesteaders format is the default: fill in every shared feature unless a
+// page opts out with `false`, and fail if a full page is missing something.
+function withDefaults(raw) {
+  const p = { ...raw, about: { ...raw.about } };
+  const file = (k) => `img/landing/${p.path}-${k}`;
+  const need = (key) => { if (raw[key] === undefined) fail(`/${p.path}: missing ${key} (add it, or set ${key}: false to opt out)`); };
+  ['promoCode', 'searchExamples', 'lifestyleImage', 'screenshots', 'og'].forEach(need);
+  p.earlyAccessHero = raw.earlyAccessHero !== false;
+  p.about.closing = raw.about.closing ?? SITE.closingLine;
+  if (p.lifestyleImage) p.lifestyleImage = { base: file('lifestyle'), width: 1200, height: 800, ...raw.lifestyleImage };
+  if (p.screenshots) {
+    p.screenshots = {};
+    for (const [k, f] of [['hero', 'results'], ['profile', 'profile']]) {
+      const v = raw.screenshots[k];
+      if (v === false) continue;
+      if (!v) fail(`/${p.path}: missing screenshots.${k} (add it, or set screenshots.${k}: false)`);
+      p.screenshots[k] = { base: file(f), ...v };
+    }
+  }
+  if (p.og) p.og = { image: `${file('og')}.jpg`, ...raw.og };
+  for (const [what, v] of [['lifestyleImage', p.lifestyleImage], ['screenshots.hero', p.screenshots?.hero], ['screenshots.profile', p.screenshots?.profile]]) {
+    if (v && !v.alt) fail(`/${p.path}: ${what} needs alt text`);
+  }
+  if (p.og && !p.og.imageAlt) fail(`/${p.path}: og needs imageAlt`);
+  return p;
+}
+
 const report = [];
-for (const p of PAGES) {
+for (const raw of PAGES) {
+  const p = withDefaults(raw);
   // The path IS the campaign token (Apple ct, Google Play utm_campaign,
   // analytics page) — see SITE.campaignConvention in config.mjs.
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.path) || p.path.length > 40) fail(`bad path "${p.path}": lowercase words joined by hyphens, max 40 characters`);
   if ('campaign' in p) fail(`/${p.path}: remove "campaign" — the campaign token is always the path`);
   if (p.promoCode && !/^[A-Z0-9]{3,20}$/.test(p.promoCode)) fail(`/${p.path}: promoCode must be 3–20 capital letters/digits`);
-  if (p.lifestyleImage && !(p.screenshots?.hero || p.screenshots?.search)) fail(`/${p.path}: a lifestyleImage needs screenshots.hero (or .search) for the phone beside it`);
+  if (p.lifestyleImage && !p.screenshots?.hero) fail(`/${p.path}: a lifestyleImage needs screenshots.hero for the phone beside it`);
   const assets = [
     p.lifestyleImage && `${p.lifestyleImage.base}-${(p.lifestyleImage.widths || [720, 1200]).at(-1)}.jpg`,
     p.screenshots?.hero && `${p.screenshots.hero.base}.png`,
-    p.screenshots?.search && `${p.screenshots.search.base}.png`,
+    p.screenshots?.hero && `${p.screenshots.hero.base}.webp`,
+    p.screenshots?.profile && `${p.screenshots.profile.base}.webp`,
+    p.lifestyleImage && `${p.lifestyleImage.base}-${(p.lifestyleImage.widths || [720, 1200])[0]}.webp`,
     p.screenshots?.profile && `${p.screenshots.profile.base}.png`,
     p.og?.image,
   ].filter(Boolean);

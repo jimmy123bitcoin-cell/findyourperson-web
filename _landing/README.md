@@ -37,23 +37,35 @@ referral, and attribute completed profiles to the campaign.
 ## 3. Generate the images (in the my-person repo)
 
 1. Copy `scripts/landing-shots/niches/homesteaders/` to `niches/<path>/`. Edit
-   `niche.mjs`: the search to show (category + keyword), the fictional demo
-   profiles and their avatars, the profile to open, and the `og` headline.
+   `niche.mjs`: the search to show (a real category + a keyword every demo
+   profile genuinely matches — search covers occupation, hobbies and profile
+   text), the fictional demo profiles and their avatars, the profile to open,
+   and the `og` headline.
 2. Add a lifestyle photo as `findyourperson-web/img/landing/<path>-lifestyle-{720,1200}.{jpg,webp}`
-   (3:2; generated or licensed, no people).
+   (3:2; generated or licensed, no people, no readable logos).
 3. `node scripts/landing-shots/shoot.mjs <path>`: builds the real app for
    the browser, runs it on demo data only (every write is blocked, and no real
-   member can appear), and saves `<path>-search/-results/-profile` screenshots.
+   member can appear), and saves `<path>-search/-results/-profile`. The page
+   uses `-results` (hero) and `-profile` (How It Works); delete `-search`.
+   Add `--no-build` when shooting several pages in a row.
 4. `node scripts/landing-shots/og.mjs <path>`: 1200×630 sharing image.
 
 ## 4. Add the page to `config.mjs` `PAGES`
 
-Required: `path`, meta title/description, headline/subhead, about, point2Body,
-who, faqs. Optional: `promoCode`, `earlyAccessHero: true` (the Early Access
-note under the hero buttons), `lifestyleImage`, `screenshots` (`hero`: the phone
-beside the lifestyle photo, normally the `-results` shot because it shows
-audience profiles; `profile`: How It Works), `searchExamples`, `og`. Leave out any of them and the page uses the shared
-default. Shared offer wording lives in `SITE.offer` only.
+The /homesteaders format is the default for every page. Every shared feature
+is ON unless the page opts out explicitly with `false`, and the build stops if
+anything a full page needs is missing. A page supplies only its own copy and
+alt text:
+
+- copy: `path`, `metaTitle`, `metaDescription`, `headline`, `subhead`,
+  `about { heading, paragraphs }`, `point2Body`, `who { heading, items }`, `faqs`
+- features: `promoCode`, `searchExamples`, `lifestyleImage { alt }`,
+  `screenshots { hero { alt }, profile { alt } }`, `og { imageAlt }`
+
+Image files are found by name (`img/landing/<path>-…`). The Early Access note
+and the closing line come from `SITE` automatically. Shared wording, styling
+and behaviour live in `SITE`, `template.html`, `styles.css` and the homepage,
+so a change there reaches every page on the next build.
 
 ## 5. Build, preview, deploy
 
