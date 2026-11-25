@@ -165,13 +165,16 @@ function playUrl(campaign) {
   u.searchParams.set('referrer', new URLSearchParams({ ...SITE.playReferrer, utm_campaign: campaign }).toString());
   return u.toString();
 }
-// Apple campaign link, built the way App Store Connect's generator builds it
-// (provider token pt is account-wide; only ct changes per campaign).
+// Apple campaign link, built exactly the way App Store Connect's generator
+// builds it (…/app/apple-store/id…?pt=…&ct=…&mt=8). The provider token is
+// account-wide; ct is the path in capitals, hyphens removed (convention).
+const APP_STORE_CAMPAIGN_BASE = 'https://apps.apple.com/app/apple-store/id6770636823';
+const appleCampaign = (path) => path.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join('');
 function appStoreUrl(campaign) {
   if (!SITE.appleProviderToken) return APP_STORE_BASE;
-  const u = new URL(APP_STORE_BASE);
+  const u = new URL(APP_STORE_CAMPAIGN_BASE);
   u.searchParams.set('pt', SITE.appleProviderToken);
-  u.searchParams.set('ct', campaign);
+  u.searchParams.set('ct', appleCampaign(campaign));
   u.searchParams.set('mt', '8');
   return u.toString();
 }
@@ -203,7 +206,7 @@ function offerCard(code, variant) {
             <p class="offer-body">${esc(o.body(code))}</p>
             <div class="offer-code-row">
               <code class="offer-code">${esc(code)}</code>
-              <button type="button" class="btn btn-primary btn-sm" data-copy-code="${esc(code)}">Copy code</button>
+              <button type="button" class="btn btn-primary btn-sm" data-copy-code="${esc(code)}" aria-label="Copy promo code ${esc(code)}">Copy code</button>
             </div>
             <p class="offer-status" data-copy-status role="status" aria-live="polite"></p>
             <p class="offer-note">${esc(o.referralNote)} <a href="/founding">How it works</a></p>
@@ -233,7 +236,7 @@ function render(p) {
             ${lifestylePicture(p.lifestyleImage, 'lifestyle-img', '(max-width: 860px) 100vw, 560px')}
           </div>
           <div class="phone-frame phone-frame--overlap">
-            ${screenshotPicture(p.screenshots.search, 'phone-main-single', 320, 569, false)}
+            ${screenshotPicture(p.screenshots.hero || p.screenshots.search, 'phone-main-single', 320, 569, false)}
           </div>
         </div>`
     : `        <div class="hero-visual">
@@ -283,6 +286,7 @@ ${ex.items.map((it) => `        <div class="example-card">
     ogImageAlt: esc(og.imageAlt || 'Find Your Person — Someone Worth Moving For'),
     heroModifier: p.lifestyleImage ? ' hero--lifestyle' : '',
     heroVisual,
+    heroEarlyAccess: p.earlyAccessHero ? `          <p class="hero-early-access">${esc(SITE.heroEarlyAccessLine)}</p>` : '',
     heroOffer: p.promoCode ? offerCard(p.promoCode, 'hero') : '',
     ctaOffer: p.promoCode ? offerCard(p.promoCode, 'cta') : '',
     offerScript: p.promoCode ? '  <script src="founding.js"></script>' : '',
@@ -297,7 +301,11 @@ ${ex.items.map((it) => `        <div class="example-card">
     aboutClosing: esc(p.about.closing),
     whoHeading: esc(p.who.heading),
     whoItems: p.who.items.map((t) => `        <div class="who-item">\n          ${checkIcon}\n          ${esc(t)}\n        </div>`).join('\n'),
-    faqItems: [...audienceFaqBlocks, ...homeFaqBlocks.map((b) => `        ${b}`)].join('\n'),
+    // Shared FAQ answers link to the stores too: tag those with this page's
+    // campaign so no download link on a landing page bypasses attribution.
+    faqItems: [...audienceFaqBlocks, ...homeFaqBlocks.map((b) => `        ${b}`
+      .replaceAll(`href="${APP_STORE_BASE}"`, `href="${esc(appStoreUrl(campaign))}"`)
+      .replaceAll(`href="${PLAY_BASE}"`, `href="${esc(playUrl(campaign))}"`))].join('\n'),
   };
   const html = template.replace(/\{\{(\w+)\}\}/g, (m, k) => {
     if (!(k in vars)) fail(`template placeholder {{${k}}} has no value`);
@@ -317,9 +325,10 @@ for (const p of PAGES) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.path) || p.path.length > 40) fail(`bad path "${p.path}": lowercase words joined by hyphens, max 40 characters`);
   if ('campaign' in p) fail(`/${p.path}: remove "campaign" — the campaign token is always the path`);
   if (p.promoCode && !/^[A-Z0-9]{3,20}$/.test(p.promoCode)) fail(`/${p.path}: promoCode must be 3–20 capital letters/digits`);
-  if (p.lifestyleImage && !p.screenshots?.search) fail(`/${p.path}: a lifestyleImage needs screenshots.search for the phone beside it`);
+  if (p.lifestyleImage && !(p.screenshots?.hero || p.screenshots?.search)) fail(`/${p.path}: a lifestyleImage needs screenshots.hero (or .search) for the phone beside it`);
   const assets = [
     p.lifestyleImage && `${p.lifestyleImage.base}-${(p.lifestyleImage.widths || [720, 1200]).at(-1)}.jpg`,
+    p.screenshots?.hero && `${p.screenshots.hero.base}.png`,
     p.screenshots?.search && `${p.screenshots.search.base}.png`,
     p.screenshots?.profile && `${p.screenshots.profile.base}.png`,
     p.og?.image,

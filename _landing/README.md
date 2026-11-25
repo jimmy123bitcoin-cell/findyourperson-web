@@ -11,10 +11,19 @@ comes from the homepage and `config.mjs` `SITE`, so it cannot drift.
 
 Lowercase words joined by hyphens, max 40 characters (`homesteaders`,
 `travel-nurses`, `ranch-life`). Never reuse one for a different audience. The
-build uses it for the App Store link (`ct=`), the Google Play link
-(`utm_campaign=`) and the website counters (`page=/<path>`). The Apple provider
-token is stored once in `SITE.appleProviderToken`, so App Store campaign links
-are generated automatically and nothing needs creating in App Store Connect.
+build derives every campaign link from it:
+
+| Where | Value | Example |
+|---|---|---|
+| App Store link `ct=` | path in capitals, hyphens removed | `Homesteaders`, `TravelNurses` |
+| Google Play `utm_campaign=` | path | `homesteaders`, `travel-nurses` |
+| Website counters `page=` | `/` + path | `/homesteaders` |
+
+The Apple provider token is stored once in `SITE.appleProviderToken`, so App
+Store links (`apps.apple.com/app/apple-store/id…?pt=…&ct=…&mt=8`, the same form
+App Store Connect generates) are built automatically and nothing needs creating
+in App Store Connect. Store links inside the shared FAQ answers are tagged too.
+Never hand-type a `ct`: Apple campaign names are case-sensitive.
 
 ## 2. Create the promo code (optional, in the my-person repo)
 
@@ -40,8 +49,10 @@ referral, and attribute completed profiles to the campaign.
 ## 4. Add the page to `config.mjs` `PAGES`
 
 Required: `path`, meta title/description, headline/subhead, about, point2Body,
-who, faqs. Optional: `promoCode`, `lifestyleImage`, `screenshots`,
-`searchExamples`, `og`. Leave out any of them and the page uses the shared
+who, faqs. Optional: `promoCode`, `earlyAccessHero: true` (the Early Access
+note under the hero buttons), `lifestyleImage`, `screenshots` (`hero`: the phone
+beside the lifestyle photo, normally the `-results` shot because it shows
+audience profiles; `profile`: How It Works), `searchExamples`, `og`. Leave out any of them and the page uses the shared
 default. Shared offer wording lives in `SITE.offer` only.
 
 ## 5. Build, preview, deploy

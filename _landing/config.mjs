@@ -22,13 +22,20 @@ export const SITE = {
   // Store Connect campaign link); each page's link adds its own ct.
   appleProviderToken: '128898873',
 
-  // CAMPAIGN NAMING CONVENTION (2026-11-24) — one token per landing page:
-  //   the page's path, i.e. lowercase words joined by hyphens, max 40 chars
-  //   (homesteaders, travel-nurses, …). Never reused for a different audience.
-  // The build uses that one token everywhere, so the reports line up:
-  //   App Store link   ct=<token>            (App Store Connect → App Analytics → Campaigns)
-  //   Google Play link utm_campaign=<token>  (Play Console → acquisition reports)
-  //   website counters page=/<token>          (npm run growth -- web, my-person repo)
+  // CAMPAIGN NAMING CONVENTION (2026-11-24, Apple form revised 2026-11-25)
+  // — one campaign per landing page, named after its path: lowercase words
+  // joined by hyphens, max 40 chars (homesteaders, travel-nurses, …). Never
+  // reused for a different audience. The build derives every link from it:
+  //   App Store link   ct=<Path in capitals, hyphens removed>  (Homesteaders, TravelNurses)
+  //                    → App Store Connect → App Analytics → Campaigns
+  //   Google Play link utm_campaign=<path>   (homesteaders, travel-nurses)
+  //                    → Play Console acquisition reports
+  //   website counters page=/<path>          (npm run growth -- web, my-person repo)
+  // Apple's form matches the owner's first App Store Connect link
+  // (ct=Homesteaders); Apple campaign names are case-sensitive, so never
+  // hand-type a ct.
+  // Store links inside the shared homepage FAQ answers are tagged the same
+  // way on landing pages, so no download link bypasses the campaign.
   // The page's promo code is separate: a short capitalised word
   // (HOMESTEAD) created as a `campaign` code whose campaign label names the
   // audience, so completed profiles are attributed in the growth report.
@@ -44,9 +51,13 @@ export const SITE = {
   // and the app (Phase 1 terms).
   offer: {
     title: 'Become one of our first 100 Founding Members',
-    body: (code) => `Complete your profile and use promo code ${code} to receive free Premium through one year after messaging opens, along with exclusive Founding Member benefits.`,
+    body: (code) => `Create your profile, then enter promo code ${code} when the app asks at the end, or anytime in Settings → Redeem a Promo Code, to receive free Premium through one year after messaging opens, along with exclusive Founding Member benefits.`,
     referralNote: 'Have a referral code from a friend? Use theirs instead to receive the same benefits.',
   },
+
+  // Understated Early Access note under the hero download buttons, on pages
+  // that set earlyAccessHero: true (the /homesteaders reference format).
+  heroEarlyAccessLine: "We're currently in Early Access. Create your profile and explore matches nationwide. Messaging will open as soon as the community is ready.",
 
   // Shared Early Access line for the closing CTA.
   earlyAccessLine: 'Early Access: Create your profile and explore the founding community now. Messaging will open as soon as the community is ready.',
@@ -65,6 +76,10 @@ export const SITE = {
 };
 
 const CLOSING_LINE = 'No endless swiping. No algorithm deciding who you see. Just search for what matters to you.';
+
+// Owner-approved 2026-11-25 for /homesteaders (replaces the "no algorithm"
+// claim); other pages keep CLOSING_LINE until they are next revised.
+const CLOSING_LINE_V2 = 'No swiping. You decide who to search for, based on what matters to you.';
 
 // Per page (path is also the campaign token — see campaignConvention):
 //   hero        — headline + subhead
@@ -85,13 +100,14 @@ export const PAGES = [
   {
     path: 'homesteaders',
     promoCode: 'HOMESTEAD',
+    earlyAccessHero: true,
     lifestyleImage: {
       base: 'img/landing/homesteaders-lifestyle',
       alt: 'A white farmhouse with a vegetable garden and a chicken coop at golden hour',
       width: 1200, height: 800,
     },
     screenshots: {
-      search: { base: 'img/landing/homesteaders-search', alt: 'The Find Your Person search screen with the Rural & Homestead category selected and "Chickens" typed in the search box' },
+      hero: { base: 'img/landing/homesteaders-results', alt: 'Illustrative Find Your Person search results for "Chickens": Rosa and Hannah, both tagged Rural & Homestead and willing to relocate, describing goats, chickens, gardens and canning season' },
       profile: { base: 'img/landing/homesteaders-profile', alt: 'An illustrative profile: Hannah, willing to relocate, passionate about raising chickens and growing her own food' },
     },
     searchExamples: {
@@ -117,7 +133,7 @@ export const PAGES = [
         "Finding someone who wants the same kind of life can be difficult when you're limited to people nearby. Maybe you already have land and want a partner to share it with. Maybe you're still dreaming of a homestead, a garden, animals, and a more self-sufficient way of living.",
         'Find Your Person lets you search nationwide for people whose values, interests, and goals align with yours — including those who would consider relocating for the right relationship.',
       ],
-      closing: CLOSING_LINE,
+      closing: CLOSING_LINE_V2,
     },
     point2Body: 'Search nationwide instead of limiting yourself to nearby singles. Someone who shares your vision for land, self-sufficiency, and rural living might be in another state.',
     who: {
