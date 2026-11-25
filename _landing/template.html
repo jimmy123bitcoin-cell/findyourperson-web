@@ -18,18 +18,21 @@
   <!-- OpenGraph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{url}}" />
-  <meta property="og:title" content="{{metaTitle}}" />
-  <meta property="og:description" content="{{metaDescription}}" />
-  <meta property="og:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta property="og:title" content="{{ogTitle}}" />
+  <meta property="og:description" content="{{ogDescription}}" />
+  <meta property="og:image" content="{{ogImage}}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{{ogImageAlt}}" />
   <meta property="og:site_name" content="Find Your Person" />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{metaTitle}}" />
-  <meta name="twitter:description" content="{{metaDescription}}" />
-  <meta name="twitter:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta name="twitter:title" content="{{ogTitle}}" />
+  <meta name="twitter:description" content="{{ogDescription}}" />
+  <meta name="twitter:image" content="{{ogImage}}" />
+  <meta name="twitter:image:alt" content="{{ogImageAlt}}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,7 +49,7 @@
   {{nav}}
 
   <!-- HERO -->
-  <section class="hero hero--landing">
+  <section class="hero hero--landing{{heroModifier}}">
     <div class="hero-inner">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -56,13 +59,9 @@
           <div class="badge-row" id="get-the-app">
             {{badges}}
           </div>
+{{heroOffer}}
         </div>
-        <div class="hero-visual">
-          <div class="hero-glow"></div>
-          <div class="phone-frame">
-            <img class="phone-main-single" src="img/screenshot-search.png" alt="Search screen — search the entire US by values and lifestyle" width="320" height="569" />
-          </div>
-        </div>
+{{heroVisual}}
       </div>
     </div>
   </section>
@@ -76,8 +75,9 @@
       <p class="about-quote">{{aboutClosing}}</p>
     </div>
   </section>
-
-  <!-- HOW IT WORKS (from the homepage; only point 2's body is audience-specific) -->
+{{searchExamples}}
+  <!-- HOW IT WORKS (from the homepage; only point 2's body and, optionally,
+       the profile screenshot are audience-specific) -->
   {{howItWorks}}
 
   <!-- WHO IT'S FOR -->
@@ -91,7 +91,7 @@
     </div>
   </section>
 
-  <!-- FAQ (audience questions first, then the homepage's ten) -->
+  <!-- FAQ (audience questions first, then the homepage's general ones) -->
   <section class="faq-section" id="faq">
     <div class="faq-inner">
       <p class="section-label">FAQ</p>
@@ -107,10 +107,11 @@
     <div class="cta-panel">
       <h2>Someone Worth Moving For</h2>
       <p>Free to download. Free to search.</p>
-      <p>Early Access: Create your profile and explore the founding community now. Messaging will open as soon as the community is ready.</p>
+      <p>{{earlyAccessLine}}</p>
       <div class="badge-row">
         {{badges}}
       </div>
+{{ctaOffer}}
       <p class="cta-age-notice">Find Your Person is for adults 18 and older. By downloading, you confirm you meet the age requirement.</p>
     </div>
   </section>
@@ -118,5 +119,7 @@
   {{footer}}
 
   <script src="script.js"></script>
+{{offerScript}}
+  <script src="analytics.js" defer></script>
 </body>
 </html>

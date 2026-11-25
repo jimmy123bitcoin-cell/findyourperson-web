@@ -20,16 +20,19 @@
   <meta property="og:url" content="https://findyourperson.app/homesteaders" />
   <meta property="og:title" content="Homestead Dating | Find Your Person" />
   <meta property="og:description" content="Search the whole U.S. for someone who wants the homestead life too, and see who's willing to relocate." />
-  <meta property="og:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta property="og:image" content="https://findyourperson.app/img/landing/homesteaders-og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A farmhouse and vegetable garden beside the words &quot;Dating for homesteaders&quot; and the Find Your Person logo" />
   <meta property="og:site_name" content="Find Your Person" />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Homestead Dating | Find Your Person" />
   <meta name="twitter:description" content="Search the whole U.S. for someone who wants the homestead life too, and see who's willing to relocate." />
-  <meta name="twitter:image" content="https://findyourperson.app/img/og-preview.png" />
+  <meta name="twitter:image" content="https://findyourperson.app/img/landing/homesteaders-og.jpg" />
+  <meta name="twitter:image:alt" content="A farmhouse and vegetable garden beside the words &quot;Dating for homesteaders&quot; and the Find Your Person logo" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,6 +51,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. You might already have a homestead, or you might be working toward one. Find Your Person lets you describe what matters to you and search for people with compatible goals and interests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I find someone who wants to start a homestead together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Search for the words people use when they describe that goal, like homestead, chickens, or off-grid, and add the Rural & Homestead category. Every profile also shows whether someone is willing to relocate, so you can find people open to building that life somewhere new."
         }
       },
       {
@@ -137,6 +148,14 @@
           "@type": "Answer",
           "text": "Every profile includes a field indicating whether the person would consider relocating for the right relationship. If either person is willing to move, the match is viable — it's what makes nationwide compatibility realistic rather than theoretical."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Founding Member?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our first 100 qualifying members become Founding Members. To qualify, complete your profile and redeem an eligible promo code: a friend's referral code, or a code from one of our pages such as findyourperson.app/founding. Founding Members get free Premium through one year after messaging opens, plus exclusive benefits. You don't need a code to join: anyone can create a profile and search for free."
+        }
       }
     ]
   }
@@ -162,7 +181,7 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero hero--landing">
+  <section class="hero hero--landing hero--lifestyle">
     <div class="hero-inner">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -170,7 +189,7 @@
           <h1>Looking for someone who wants the homestead life too?</h1>
           <p>The right partner for a life on the land might be three states away. Find Your Person lets you search the whole U.S. by values and lifestyle, and see who's willing to relocate.</p>
           <div class="badge-row" id="get-the-app">
-            <a class="store-badge" href="https://apps.apple.com/app/find-your-person/id6770636823" target="_blank" rel="noopener">
+            <a class="store-badge" href="https://apps.apple.com/app/find-your-person/id6770636823?pt=128898873&amp;ct=homesteaders&amp;mt=8" target="_blank" rel="noopener">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               <span>
                 <span class="badge-label">Download on the</span>
@@ -185,11 +204,29 @@
               </span>
             </a>
           </div>
+          <div class="offer-card offer-card--hero" data-offer data-founding-open>
+            <p class="offer-title">Become one of our first 100 Founding Members</p>
+            <p class="offer-body">Complete your profile and use promo code HOMESTEAD to receive free Premium through one year after messaging opens, along with exclusive Founding Member benefits.</p>
+            <div class="offer-code-row">
+              <code class="offer-code">HOMESTEAD</code>
+              <button type="button" class="btn btn-primary btn-sm" data-copy-code="HOMESTEAD">Copy code</button>
+            </div>
+            <p class="offer-status" data-copy-status role="status" aria-live="polite"></p>
+            <p class="offer-note">Have a referral code from a friend? Use theirs instead to receive the same benefits. <a href="/founding">How it works</a></p>
+          </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-glow"></div>
-          <div class="phone-frame">
-            <img class="phone-main-single" src="img/screenshot-search.png" alt="Search screen — search the entire US by values and lifestyle" width="320" height="569" />
+        <div class="hero-visual hero-visual--lifestyle">
+          <div class="lifestyle-frame">
+            <picture>
+              <source type="image/webp" srcset="img/landing/homesteaders-lifestyle-720.webp 720w, img/landing/homesteaders-lifestyle-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 560px" />
+              <img class="lifestyle-img" src="img/landing/homesteaders-lifestyle-1200.jpg" srcset="img/landing/homesteaders-lifestyle-720.jpg 720w, img/landing/homesteaders-lifestyle-1200.jpg 1200w" sizes="(max-width: 860px) 100vw, 560px" alt="A white farmhouse with a vegetable garden and a chicken coop at golden hour" width="1200" height="800" fetchpriority="high" />
+            </picture>
+          </div>
+          <div class="phone-frame phone-frame--overlap">
+            <picture>
+              <source type="image/webp" srcset="img/landing/homesteaders-search.webp" />
+              <img class="phone-main-single" src="img/landing/homesteaders-search.png" alt="The Find Your Person search screen with the Rural &amp; Homestead category selected and &quot;Chickens&quot; typed in the search box" width="320" height="569" />
+            </picture>
           </div>
         </div>
       </div>
@@ -207,7 +244,35 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS (from the homepage; only point 2's body is audience-specific) -->
+  <!-- SEARCH EXAMPLES (audience-specific) -->
+  <section class="examples-section">
+    <div class="examples-inner">
+      <p class="section-label">Search Ideas</p>
+      <h2 class="section-title">Search for the life you want to build</h2>
+      <p class="examples-intro">Type the words that matter to you, then narrow it down with categories and filters. A few searches to try:</p>
+      <div class="examples-grid">
+        <div class="example-card">
+          <p class="example-text">Someone who wants to raise a family on a homestead</p>
+          <div class="example-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Homestead</span></div>
+          <div class="example-chips"><span class="example-chip">Kids Soon</span></div>
+        </div>
+        <div class="example-card">
+          <p class="example-text">Someone into gardening, raising animals, and self-sufficiency</p>
+          <div class="example-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Gardening</span></div>
+          <div class="example-chips"><span class="example-chip">Rural &amp; Homestead</span></div>
+        </div>
+        <div class="example-card">
+          <p class="example-text">Someone willing to relocate to build a rural life together</p>
+          <div class="example-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Off-grid</span></div>
+          <div class="example-chips"><span class="example-chip">Rural &amp; Homestead</span><span class="example-chip">Willing to relocate: Yes</span></div>
+        </div>
+      </div>
+      <p class="examples-fine">Search matches the words people write in their profiles, plus categories and filters. Results depend on who has joined, and we're in Early Access and still growing.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (from the homepage; only point 2's body and, optionally,
+       the profile screenshot are audience-specific) -->
   <section class="explainer" id="how-it-works">
     <div class="explainer-inner">
       <p class="section-label">How It Works</p>
@@ -221,7 +286,11 @@
             <p>Type what matters to you — lifestyle, goals, interests, or relationship preferences — then layer on filters for the basics. Search real profile words instead of waiting for an algorithm to decide who you see.</p>
           </div>
           <div class="step-visual">
-            <img class="phone-screen" src="img/screenshot-profile.png" alt="Profile screen showing an avatar, relocation and lifestyle tags, and written answers about who they are and who they hope to meet" width="260" height="462" />
+            <picture>
+              <source type="image/webp" srcset="img/landing/homesteaders-profile.webp" />
+              <img class="phone-screen" src="img/landing/homesteaders-profile.png" alt="An illustrative profile: Hannah, willing to relocate, passionate about raising chickens and growing her own food" width="260" height="462" loading="lazy" decoding="async" />
+            </picture>
+            <p class="shot-caption">App screens shown with illustrative demo profiles.</p>
           </div>
         </div>
 
@@ -300,7 +369,7 @@
     </div>
   </section>
 
-  <!-- FAQ (audience questions first, then the homepage's ten) -->
+  <!-- FAQ (audience questions first, then the homepage's general ones) -->
   <section class="faq-section" id="faq">
     <div class="faq-inner">
       <p class="section-label">FAQ</p>
@@ -309,6 +378,10 @@
         <details class="faq-item">
           <summary>Do I need to own land or already be homesteading?<span class="chevron"></span></summary>
           <div class="faq-a">No. You might already have a homestead, or you might be working toward one. Find Your Person lets you describe what matters to you and search for people with compatible goals and interests.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I find someone who wants to start a homestead together?<span class="chevron"></span></summary>
+          <div class="faq-a">Yes. Search for the words people use when they describe that goal, like homestead, chickens, or off-grid, and add the Rural &amp; Homestead category. Every profile also shows whether someone is willing to relocate, so you can find people open to building that life somewhere new.</div>
         </details>
         <details class="faq-item">
           <summary>What if I already have land and can't relocate?<span class="chevron"></span></summary>
@@ -354,6 +427,10 @@
           <summary>What is the "Willing to Relocate" field?<span class="chevron"></span></summary>
           <div class="faq-a">Every profile includes a field indicating whether the person would consider relocating for the right relationship. If either person is willing to move, the match is viable — it's what makes nationwide compatibility realistic rather than theoretical.</div>
         </details>
+        <details class="faq-item">
+          <summary>What is a Founding Member?<span class="chevron"></span></summary>
+          <div class="faq-a">Our first 100 qualifying members become Founding Members. To qualify, complete your profile and redeem an eligible promo code: a friend's referral code, or a code from one of our pages such as <a href="/founding">findyourperson.app/founding</a>. Founding Members get free Premium through one year after messaging opens, plus exclusive benefits. You don't need a code to join: anyone can create a profile and search for free.</div>
+        </details>
       </div>
     </div>
   </section>
@@ -365,7 +442,7 @@
       <p>Free to download. Free to search.</p>
       <p>Early Access: Create your profile and explore the founding community now. Messaging will open as soon as the community is ready.</p>
       <div class="badge-row">
-        <a class="store-badge" href="https://apps.apple.com/app/find-your-person/id6770636823" target="_blank" rel="noopener">
+        <a class="store-badge" href="https://apps.apple.com/app/find-your-person/id6770636823?pt=128898873&amp;ct=homesteaders&amp;mt=8" target="_blank" rel="noopener">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               <span>
                 <span class="badge-label">Download on the</span>
@@ -380,6 +457,16 @@
               </span>
             </a>
       </div>
+          <div class="offer-card offer-card--cta" data-offer data-founding-open>
+            <p class="offer-title">Become one of our first 100 Founding Members</p>
+            <p class="offer-body">Complete your profile and use promo code HOMESTEAD to receive free Premium through one year after messaging opens, along with exclusive Founding Member benefits.</p>
+            <div class="offer-code-row">
+              <code class="offer-code">HOMESTEAD</code>
+              <button type="button" class="btn btn-primary btn-sm" data-copy-code="HOMESTEAD">Copy code</button>
+            </div>
+            <p class="offer-status" data-copy-status role="status" aria-live="polite"></p>
+            <p class="offer-note">Have a referral code from a friend? Use theirs instead to receive the same benefits. <a href="/founding">How it works</a></p>
+          </div>
       <p class="cta-age-notice">Find Your Person is for adults 18 and older. By downloading, you confirm you meet the age requirement.</p>
     </div>
   </section>
@@ -405,5 +492,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="founding.js"></script>
+  <script src="analytics.js" defer></script>
 </body>
 </html>

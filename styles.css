@@ -924,3 +924,110 @@ footer a:hover { color: var(--white); }
   .cta-panel { padding: 48px 24px; }
   .nav-brand .tagline { display: none; }
 }
+
+/* ── AUDIENCE LANDING PAGES: lifestyle hero, offer, search ideas (2026-11-24) ── */
+/* Hero visual: lifestyle photo with the app screenshot overlapping it. */
+.hero-visual--lifestyle {
+  display: block;
+  min-height: 0;
+  padding-bottom: 56px;
+}
+.lifestyle-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  aspect-ratio: 4 / 5;
+  max-height: 560px;
+  margin-left: 56px;
+}
+.lifestyle-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 30% 60%; }
+.phone-frame--overlap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+}
+.phone-frame--overlap .phone-main-single { width: 100%; border-width: 6px; border-radius: 22px; }
+.shot-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+.step-visual:has(.shot-caption) { flex-direction: column; align-items: center; }
+.step-visual .shot-caption { max-width: 260px; margin-left: auto; margin-right: auto; }
+
+/* Founding Member offer (shared component; copy lives in _landing/config.mjs). */
+.offer-card {
+  margin-top: 24px;
+  max-width: 480px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px 14px;
+  text-align: left;
+}
+.offer-card .offer-title { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0 0 6px; max-width: none; }
+.offer-card .offer-body { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin: 0 0 12px; max-width: none; }
+.offer-code-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.offer-code {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--burgundy);
+  background: var(--cream);
+  border: 2px dashed var(--gold);
+  border-radius: 10px;
+  padding: 4px 14px;
+  user-select: all;
+}
+.offer-card .offer-status { min-height: 18px; margin: 6px 0 0; font-size: 13px; font-weight: 600; color: var(--burgundy); max-width: none; }
+.offer-card .offer-note { font-size: 13px; line-height: 1.5; color: var(--text-muted); margin: 2px 0 0; max-width: none; }
+.offer-card .offer-note a { color: var(--burgundy); font-weight: 600; }
+.offer-card--cta { margin: 28px auto 8px; color: var(--ink); }
+
+/* Search ideas */
+.examples-section { padding: 0 24px var(--section-pad); }
+.examples-inner { max-width: 980px; margin: 0 auto; }
+.examples-intro { color: var(--text-secondary); font-size: 17px; margin: -4px 0 24px; max-width: 640px; }
+.examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.example-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+.example-text { font-weight: 600; color: var(--ink); line-height: 1.45; margin-bottom: 14px; }
+.example-search {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--cream);
+  padding: 9px 12px; color: var(--text-muted); font-size: 15px;
+}
+.example-search span { color: var(--ink); }
+.example-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.example-chip {
+  font-size: 13px; font-weight: 600; color: var(--white); background: var(--burgundy);
+  border-radius: var(--radius-pill); padding: 5px 12px;
+}
+.examples-fine { margin-top: 16px; font-size: 13px; color: var(--text-muted); max-width: 720px; }
+
+@media (max-width: 860px) {
+  .offer-card--hero { margin-left: auto; margin-right: auto; }
+  .examples-inner { text-align: center; }
+  .examples-intro, .examples-fine { margin-left: auto; margin-right: auto; }
+  .example-card { text-align: left; }
+  .hero-visual--lifestyle { margin-top: 36px; max-width: 520px; margin-left: auto; margin-right: auto; padding-bottom: 72px; }
+  .lifestyle-frame { aspect-ratio: 3 / 2; margin-left: 0; }
+  .phone-frame--overlap { width: 150px; left: 12px; bottom: 24px; }
+  .hero-visual--lifestyle { padding-bottom: 0; }
+  .hero-visual--lifestyle .lifestyle-frame { margin-bottom: 0; }
+}
+@media (max-width: 480px) {
+  .offer-card { padding: 16px 16px 12px; }
+  .offer-code { font-size: 18px; }
+  .phone-frame--overlap { width: 120px; bottom: 20px; }
+}

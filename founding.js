@@ -1,28 +1,26 @@
-// /founding — copy-to-clipboard + live availability.
+// Shared Founding Member offer behaviour — used by /founding AND every
+// audience landing page (one copy of the logic, so pages can't drift).
+//
+// Markup contract (data attributes, any number per page):
+//   [data-copy-code="CODE"]   button that copies CODE; shows feedback in the
+//                             nearest [data-copy-status] inside the same
+//                             [data-offer] (or the page's only one)
+//   [data-founding-open]      shown while spots remain (DEFAULT — also kept if
+//                             the availability check fails or times out)
+//   [data-founding-closed]    shown instead once the program is full or off
+//   [data-closed-text="…"]    element whose text is replaced when closed
+//   <body data-closed-title="…">  document.title when closed
 //
 // Availability comes from the app's own counter (Supabase RPC founding_spots,
-// the same call the app makes; the publishable key below is the public client
-// key every app install already carries). No cookies, no analytics, no
-// tracking: one anonymous POST that returns { enabled, capacity, filled,
-// remaining, rule }.
-//
-// States:
-//   open    — default markup, also kept if the check fails or times out
-//             ("while spots remain" stays visible; owner decision 2026-11-24)
-//   closed  — only when the counter says the program is off or full: the code
-//             is hidden so the page never advertises an unavailable offer
+// the same call the app makes, with the public client key every install
+// carries). No cookies, no tracking: one anonymous POST returning
+// { enabled, capacity, filled, remaining, rule }.
 (function () {
   var SUPABASE_URL = 'https://orwhyzrlzxpltlyuteii.supabase.co';
   var SUPABASE_KEY = 'sb_publishable_ilPJgpt_roB96iuOYJxz-Q_KcJIDgLw';
+  var each = function (sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); };
 
   // ── Copy ────────────────────────────────────────────────────────────────
-  var btn = document.getElementById('copy-code');
-  var status = document.getElementById('copy-status');
-  function done(msg) {
-    if (status) status.textContent = msg;
-    if (btn) btn.textContent = 'Copied!';
-    setTimeout(function () { if (btn) btn.textContent = 'Copy code'; }, 2500);
-  }
   function fallbackCopy(text) {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -36,22 +34,34 @@
     document.body.removeChild(ta);
     return ok;
   }
-  if (btn) {
+  each('[data-copy-code]', function (btn) {
+    var label = btn.textContent;
+    var scope = btn.closest('[data-offer]') || document;
+    var status = scope.querySelector('[data-copy-status]');
+    function done(msg, copied) {
+      if (status) status.textContent = msg;
+      if (copied) {
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = label; }, 2500);
+        if (window.fypTrack) window.fypTrack('code_copy', btn.getAttribute('data-copy-code'));
+      }
+    }
     btn.addEventListener('click', function () {
-      var code = btn.getAttribute('data-code');
-      var copiedMsg = 'Copied. Paste it in the app when your profile is complete.';
+      var code = btn.getAttribute('data-copy-code');
+      var okMsg = 'Copied. Paste it in the app when your profile is complete.';
+      var failMsg = 'Press and hold the code to copy it.';
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(code).then(function () { done(copiedMsg); }, function () {
-          done(fallbackCopy(code) ? copiedMsg : 'Press and hold the code to copy it.');
+        navigator.clipboard.writeText(code).then(function () { done(okMsg, true); }, function () {
+          var ok = fallbackCopy(code); done(ok ? okMsg : failMsg, ok);
         });
       } else {
-        done(fallbackCopy(code) ? copiedMsg : 'Press and hold the code to copy it.');
+        var ok = fallbackCopy(code); done(ok ? okMsg : failMsg, ok);
       }
     });
-  }
+  });
 
   // ── Availability ────────────────────────────────────────────────────────
-  if (SUPABASE_URL.indexOf('__') === 0 || !window.fetch) return;
+  if (!document.querySelector('[data-founding-open]') || !window.fetch) return;
   var controller = window.AbortController ? new AbortController() : null;
   var timer = setTimeout(function () { if (controller) controller.abort(); }, 6000);
   fetch(SUPABASE_URL + '/rest/v1/rpc/founding_spots', {
@@ -63,14 +73,11 @@
   }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
     clearTimeout(timer);
     if (!d || typeof d.remaining !== 'number') return; // unknown → stay open
-    var closed = d.enabled === false || d.remaining <= 0;
-    if (closed) {
-      document.getElementById('founding-open').hidden = true;
-      document.getElementById('founding-closed').hidden = false;
-      document.getElementById('benefits-heading').textContent = 'What our Founding Members received';
-      document.getElementById('founding-title').textContent = 'Founding Membership is full';
-      document.getElementById('no-code-note').hidden = true;
-      document.title = 'Founding Membership is full — Find Your Person';
-    }
+    if (!(d.enabled === false || d.remaining <= 0)) return;
+    each('[data-founding-open]', function (el) { el.hidden = true; });
+    each('[data-founding-closed]', function (el) { el.hidden = false; });
+    each('[data-closed-text]', function (el) { el.textContent = el.getAttribute('data-closed-text'); });
+    var t = document.body.getAttribute('data-closed-title');
+    if (t) document.title = t;
   }).catch(function () { clearTimeout(timer); });
 })();

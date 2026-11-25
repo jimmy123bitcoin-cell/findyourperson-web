@@ -33,7 +33,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-closed-title="Founding Membership is full — Find Your Person">
 
   <nav>
     <a class="nav-brand" href="index.html">
@@ -53,23 +53,23 @@
 
   <main class="founding-page">
     <p class="section-label">Founding 100</p>
-    <h1 id="founding-title">Become a Founding Member</h1>
+    <h1 id="founding-title" data-closed-text="Founding Membership is full">Become a Founding Member</h1>
 
     <!-- OPEN state (default; also shown if availability can't be checked) -->
-    <div id="founding-open">
+    <div id="founding-open" data-founding-open>
       <p class="founding-lede">
         Become one of our first 100 Founding Members. Complete your profile and use an eligible promo code
         to receive <strong>free Premium through one year after messaging opens</strong>, along with
         exclusive Founding Member benefits.
       </p>
 
-      <div class="founding-code-card">
+      <div class="founding-code-card" data-offer>
         <span class="founding-code-label">Your promo code</span>
         <div class="founding-code-row">
           <code class="founding-code" id="founding-code">FOUNDING</code>
-          <button type="button" class="btn btn-primary btn-sm" id="copy-code" data-code="FOUNDING">Copy code</button>
+          <button type="button" class="btn btn-primary btn-sm" id="copy-code" data-copy-code="FOUNDING">Copy code</button>
         </div>
-        <p class="founding-code-status" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="founding-code-status" id="copy-status" data-copy-status role="status" aria-live="polite"></p>
         <p class="founding-referral-note">
           Already have a referral code from a friend? Use their code instead to receive the same
           Founding Member benefits and give them credit for referring you.
@@ -89,14 +89,14 @@
     </div>
 
     <!-- CLOSED state (shown only when the app's own counter says all 100 are taken) -->
-    <div id="founding-closed" hidden>
+    <div id="founding-closed" data-founding-closed hidden>
       <p class="founding-lede">
         All 100 Founding Member spots have been claimed. Thank you to our founding community!
         You can still join Find Your Person for free: create your profile and search nationwide.
       </p>
     </div>
 
-    <h2 id="benefits-heading">Founding Member benefits</h2>
+    <h2 id="benefits-heading" data-closed-text="What our Founding Members received">Founding Member benefits</h2>
     <ul class="founding-benefits">
       <li>
         <strong>Free Premium through one year after messaging opens</strong>
@@ -117,7 +117,7 @@
     </ul>
 
     <div class="founding-note">
-      <p id="no-code-note"><strong>You don't need a code to join.</strong> Anyone can download Find Your Person, create a profile, and search for free. A code is only needed for Founding Membership.</p>
+      <p id="no-code-note" data-founding-open><strong>You don't need a code to join.</strong> Anyone can download Find Your Person, create a profile, and search for free. A code is only needed for Founding Membership.</p>
       <p><strong>We're in Early Access.</strong> Right now you can create your profile, search nationwide, and save profiles. Messaging isn't available yet. A code doesn't open messaging early.</p>
     </div>
   </main>
@@ -168,5 +168,6 @@
 
   <script src="script.js"></script>
   <script src="founding.js"></script>
+  <script src="analytics.js" defer></script>
 </body>
 </html>
